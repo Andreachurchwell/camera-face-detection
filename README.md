@@ -33,6 +33,11 @@ This started as a fun idea and turned into a project I really enjoyed building, 
 - Captured images are ignored by git and saved locally at runtime.
 - Detection thresholds and cooldowns can be adjusted in the script.
 
+## Safety
+- The keyboard lock uses the standard Windows lock screen (same as pressing Win + L).
+- No input devices are disabled at the system level.
+- The application can be exited at any time by pressing `q`.
+
 ## How to run
 ```
 python -m venv venv
@@ -40,3 +45,6 @@ source venv/Scripts/activate
 pip install -r requirements.txt
 python src/face_and_cat_guard.py
 ```
+
+## Why this project
+I wanted to build something fun and practical while getting more hands-on with computer vision. This project was a way to experiment with real-time detection using a webcam, and it turned into a great excuse to explore motion gating and object detection in a way that felt approachable and useful.
