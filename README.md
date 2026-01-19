@@ -6,6 +6,12 @@ If a cat is detected walking across the computer, the application automatically 
 
 This started as a fun idea and turned into a project I really enjoyed building, with a lot of help from ChatGPT along the way.
 
+
+## Why this project
+I wanted to build something fun and practical while getting more hands-on with computer vision. I get multiple “catwalks” across my computer every day, so this felt like a very real problem to solve. Ironically, while I was building and testing this, the cats were fast asleep and completely uninterested in participating.
+
+It ended up being a great excuse to experiment with real-time detection using a webcam and to learn more about motion gating and object detection in a way that felt approachable and useful.
+
 ## What it does
 - Opens a live webcam feed
 - Detects faces in real time
