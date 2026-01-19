@@ -1,9 +1,31 @@
+"""
+Face + Cat Guard (webcam)
+
+Pipeline:
+- Detect faces every frame (fast: Haar cascade)
+- Detect motion every frame (fast: frame differencing)
+- Run YOLO only when motion is detected (slow: object detection)
+- If a cat is detected with high confidence, save a snapshot and lock Windows
+
+Press 'q' to quit.
+"""
 import time
 from datetime import datetime
 import ctypes
 
 import cv2
 from ultralytics import YOLO
+
+# -----------------------------
+# Tuning knobs (easy to adjust)
+# -----------------------------
+# CAT_CLASS_ID = 15          # COCO class id for "cat"
+# CAT_CONF_THRESHOLD = 0.60  # raise to reduce false positives
+# MOTION_AREA_THRESHOLD = 1500
+# MOTION_COOLDOWN_SEC = 20
+# YOLO_MIN_INTERVAL_SEC = 0.5
+# CAMERA_INDEX = 0
+# MODEL_PATH = "yolov8n.pt"
 
 
 # -----------------------------
