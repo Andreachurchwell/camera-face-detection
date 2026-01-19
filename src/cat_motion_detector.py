@@ -1,6 +1,6 @@
 import time
 from datetime import datetime
-
+import ctypes
 import cv2
 from ultralytics import YOLO
 
@@ -11,6 +11,9 @@ def save_frame(frame, folder="captures"):
     cv2.imwrite(path, frame)
     return path
 
+def lock_computer():
+    print("[ACTION] Locking workstation")
+    ctypes.windll.user32.LockWorkStation()
 
 def main():
     cap = cv2.VideoCapture(0)
@@ -23,7 +26,7 @@ def main():
     # Motion detection settings
     prev_gray = None
     motion_area_threshold = 1500  # raise to reduce false triggers
-    motion_cooldown_sec = 8       # don't spam captures
+    motion_cooldown_sec = 20       # don't spam captures
 
     last_trigger_time = 0
 
@@ -75,7 +78,7 @@ def main():
                         cls_id = int(box.cls[0])
                         conf = float(box.conf[0])
 
-                        if cls_id == 15 and conf >= 0.35:
+                        if cls_id == 15 and conf >= 0.65:
                             cat_found = True
                             x1, y1, x2, y2 = map(int, box.xyxy[0])
                             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
@@ -90,11 +93,17 @@ def main():
                                 cv2.LINE_AA,
                             )
 
-                # Trigger capture with cooldown
+                # # Trigger capture with cooldown
+                # if cat_found and (now - last_trigger_time) >= motion_cooldown_sec:
+                #     last_trigger_time = now
+                #     path = save_frame(frame)
+                #     print(f"[CAT DETECTED] saved: {path}")
+
                 if cat_found and (now - last_trigger_time) >= motion_cooldown_sec:
                     last_trigger_time = now
                     path = save_frame(frame)
                     print(f"[CAT DETECTED] saved: {path}")
+                    lock_computer()
 
         # UI overlay
         status = "MOTION" if motion_detected else "still"
