@@ -16,3 +16,6 @@ captures/
 *.avi
 *.jpg
 *.png
+
+# YOLO model weights
+*.pt
