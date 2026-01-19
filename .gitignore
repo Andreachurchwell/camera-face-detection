@@ -9,3 +9,10 @@ __pycache__/
 # OS / editor junk
 .DS_Store
 Thumbs.db
+
+# Captures / recordings
+captures/
+*.mp4
+*.avi
+*.jpg
+*.png
