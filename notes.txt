@@ -1,0 +1,51 @@
+🐱 Face / Camera Cat Project — Learning Notes 
+
+
+
+Project Overview
+
+Built a small computer vision project using a camera feed to detect and track a cat’s face in real time. The project focused on applying basic computer vision concepts rather than model training.
+
+What I Learned
+
+How to access and process a live camera feed using OpenCV.
+
+How face detection models work at a high level, including how pre-trained classifiers identify facial features.
+
+The importance of lighting, camera angle, and movement for detection accuracy.
+
+How detection can fail or behave unpredictably when objects move quickly or look similar.
+
+How to draw bounding boxes and overlays on detected objects in real time.
+
+The difference between detection and tracking, and why tracking can break when the initial detection isn’t strong.
+
+Challenges I Ran Into
+
+Detection accuracy dropped when the cat moved quickly or turned its head.
+
+Similar shapes and colors caused inconsistent detection.
+
+The model was sensitive to lighting changes and background noise.
+
+Debugging live video felt harder than working with static images.
+
+Key Takeaways
+
+Pre-trained models are powerful but have clear limitations.
+
+Real-world data is messy compared to examples in tutorials.
+
+Computer vision requires a lot of iteration and visual debugging.
+
+Small projects like this are a good way to understand CV concepts before moving on to more complex models.
+
+What I’d Improve or Try Next
+
+Experiment with different pre-trained detectors.
+
+Improve detection stability using better lighting or camera positioning.
+
+Try adding basic tracking logic to smooth detections.
+
+Compare this approach to a deep-learning-based detector.
