@@ -16,11 +16,12 @@ This started as a fun idea and turned into a project I really enjoyed building, 
 
 ## Demo
 
-### Face and cat detection running together
-![Face and Cat Detection](images/face_and_cat_detection.png)
 
-### Cat detected and trigger activated
-![Cat Detected](images/cat_detection.jpg)
+### Face and cat detection running together
+![Face and Cat Detection](images/face_and_cat_detection.jpg)
+
+### Cat detected triggering lock
+![Cat Detection](images/cat_detection.jpg)
 
 ## Tech used
 - Python
