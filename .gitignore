@@ -14,8 +14,7 @@ Thumbs.db
 captures/
 *.mp4
 *.avi
-*.jpg
-*.png
+
 
 # YOLO model weights
 *.pt
